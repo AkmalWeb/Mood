@@ -1,0 +1,162 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Calendar styles */
+#calendar {
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    position: relative; /* For hover emoji */
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #555;
+}
+
+.calendar-day:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0;
+}
+
+.calendar-day .emoji {
+    display: none;
+    position: absolute;
+    top: -25px;
+    right: 10px;
+}
+
+.calendar-day:hover .emoji {
+    display: block;
+    font-size: 24px;
+}
+
+/* Highlight specific days */
+.highlight-start {
+    border: 3px solid #4CAF50; /* Green border for pill start date */
+}
+
+.highlight-today {
+    border: 3px solid #2196F3; /* Blue border for today's date */
+    background-color: #d1e8ff; /* Light blue background for today */
+}
+
+/* Colors for the different phases */
+.beforePMS {
+    background-color: #ffd699; /* Light orange for follicular/ovulation */
+}
+
+.pms {
+    background-color: #ff8533; /* Dark orange for PMS */
+}
+
+.period {
+    background-color: #ff3333; /* Red for Period */
+}
+
+/* Text to show phase info under each day */
+.phase-info {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Emoji for phases (optional) */
+.emoji-happy::after {
+    content: "😊";
+}
+
+.emoji-neutral::after {
+    content: "😐";
+}
+
+.emoji-sad::after {
+    content: "😢";
+}
+
+/* Month title styling */
+.month-title {
+    grid-column: span 7;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Advice section styles */
+.advice-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.advice-box strong {
+    font-size: 1.2em;
+    color: #4CAF50;
+}
+
+.advice-section {
+    margin-top: 15px;
+    padding: 10px;
+    border-left: 5px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
