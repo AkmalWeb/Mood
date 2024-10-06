@@ -10,7 +10,7 @@ function calculateMood() {
 
     // Use more reliable date parsing
     const pillDate = new Date(pillDateInput + "T00:00"); // Ensures midnight UTC parsing
-    const lastPeriodDate = new Date(lastPeriodInput + "T00:00"); 
+    const lastPeriodDate = new Date(lastPeriodInput + "T00:00");
     const today = new Date();
     const cycleLength = 28;
 
@@ -20,9 +20,8 @@ function calculateMood() {
     const dayDifference = Math.floor((today - lastPeriodEnd) / (1000 * 60 * 60 * 24));
     const currentDayInCycle = (dayDifference % cycleLength + cycleLength) % cycleLength; // Modulus fix for negative days
 
-    // Rest of your existing logic here
-
-    generateCalendar(lastPeriodEnd, currentDayInCycle);
+    // Generate calendar
+    generateCalendar(pillDate, currentDayInCycle);
 }
 
 // Function to generate the calendar
@@ -47,7 +46,7 @@ function generateCalendar(pillDate, currentDayInCycle) {
 
     // Add month title
     const monthTitle = document.createElement('h3');
-    monthTitle.innerText = today.toLocaleString('default', { month: 'long' }) + " " + year;
+    monthTitle.innerText = pillDate.toLocaleString('default', { month: 'long', year: 'numeric' });
     calendarDiv.appendChild(monthTitle);
 
     // Create the grid structure for the calendar
@@ -62,6 +61,11 @@ function generateCalendar(pillDate, currentDayInCycle) {
         emptyCell.innerText = prevMonthDay;
         calendarGrid.appendChild(emptyCell);
     }
+
+    // Create a div to show selected date info
+    const selectedDateInfo = document.createElement('div');
+    selectedDateInfo.id = 'selectedDateInfo';
+    calendarDiv.appendChild(selectedDateInfo);
 
     // Add days of the current month
     for (let day = 1; day <= totalDays; day++) {
@@ -107,8 +111,10 @@ function generateCalendar(pillDate, currentDayInCycle) {
             dayCell.title = "Normal Cycle Day"; // Default message
         }
 
+        // Click event to show selected date's cycle phase
         dayCell.onclick = () => {
-            alert(`Selected date: ${day}/${month + 1}/${year} - Cycle Day: ${dayInCycle + 1}`);
+            const selectedDate = `${day}/${month + 1}/${year}`;
+            selectedDateInfo.innerHTML = `Selected date: ${selectedDate} - Cycle Day: ${dayInCycle + 1}`;
         };
 
         calendarGrid.appendChild(dayCell);
@@ -125,4 +131,5 @@ function generateCalendar(pillDate, currentDayInCycle) {
 
     calendarDiv.appendChild(calendarGrid);
 }
+
 document.getElementById("calculateBtn").addEventListener("click", calculateMood);
