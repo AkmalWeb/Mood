@@ -9,13 +9,14 @@
 <body>
     <div class="container">
         <h1>Tamaras Mood Predictor</h1>
-        <p>Enter the date of your first pill:</p>
+        
+		 <p>Enter the date of your <b>last</b> period:</p>
+        <input type="date" id="lastPeriodDate">
+		
+		<p>Enter the date of your <b>first</b> pill:</p>
         <input type="date" id="pillDate">
 
-        <p>Enter the date of your last period:</p>
-        <input type="date" id="lastPeriodDate">
-
-        <button id="calculateBtn">Predict Mood</button>
+             <button id="calculateBtn">Predict Mood</button>
 
         <div id="result">
             <!-- Mood prediction and advice will appear here -->
@@ -28,7 +29,17 @@
 
     <script src="script.js"></script>
 	
-	  <script src="script.js"></script> <!-- Place at the end of body tag -->
+	   <!-- Legenda section -->
+        <div class="legenda">
+            <h3>How it Works</h3>
+            <ul>
+                <li><span class="legenda-box period"></span> <strong>		Period Phase (Days 0-5):</strong> 		Advice is focused on rest and self-care.</li>
+                <li><span class="legenda-box beforePMS"></span> <strong>	Follicular Phase (Days 6-14):</strong> 	Encourages creativity and socializing.</li>
+                <li><span class="legenda-box beforePMS"></span> <strong>	Ovulation Phase (Days 15-21):</strong> 	Highlights energy and confidence.</li>
+                <li><span class="legenda-box pms"></span> <strong>			Luteal Phase (Days 22-28):</strong> 	Suggests slowing down and managing potential mood swings.</li>
+            </ul>
+        </div>
+    </div>
 
 
 	 <fieldset>
