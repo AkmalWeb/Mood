@@ -11,7 +11,11 @@
         <h1>Mood Predictor</h1>
         <p>Enter the date of your first pill:</p>
         <input type="date" id="pillDate">
-        <button onclick="calculateMood()">Predict Mood</button>
+
+        <p>Enter the date of your last period:</p>
+        <input type="date" id="lastPeriodDate">
+
+        <button id="calculateBtn">Predict Mood</button>
 
         <div id="result">
             <!-- Mood prediction and advice will appear here -->
@@ -23,5 +27,7 @@
     </div>
 
     <script src="script.js"></script>
+	
+	  <script src="script.js"></script> <!-- Place at the end of body tag -->
 </body>
 </html>
