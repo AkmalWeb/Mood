@@ -197,3 +197,54 @@ button:hover {
         padding: 10px; /* Adjust button size */
     }
 }
+/* Colors for the different phases */
+.beforePMS {
+    background-color: #ffd699; /* Light orange for follicular/ovulation */
+}
+
+.pms {
+    background-color: #ff8533; /* Dark orange for PMS */
+}
+
+.period {
+    background-color: #ff3333; /* Red for Period */
+}
+
+/* Legenda styles */
+.legenda {
+    margin-top: 20px;
+}
+
+.legenda h2 {
+    margin-bottom: 10px;
+}
+
+.legenda ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.legenda li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.legenda-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+.period {
+    background-color: #ff3333; /* Red for Period */
+}
+
+.beforePMS {
+    background-color: #ffd699; /* Light orange for follicular/ovulation */
+}
+
+.pms {
+    background-color: #ff8533; /* Dark orange for PMS */
+}
